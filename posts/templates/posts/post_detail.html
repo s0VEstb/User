@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div>
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Оценка: {{ post.rate }}</p>
+    <p>Создано: {{ post.create_at }}</p>
+    <p>Обновлено: {{ post.update_at }}</p>
+    <a href="/list_view">Назад</a>
+</body>
+</html>
+</div>
+{% endblock %}
