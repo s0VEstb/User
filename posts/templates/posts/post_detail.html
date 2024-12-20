@@ -9,12 +9,24 @@
     <title>{{ post.title }}</title>
 </head>
 <body>
+    <div class="card" style="width: 30rem;"> 
+        
     <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
-    <p>Оценка: {{ post.rate }}</p>
-    <p>Создано: {{ post.create_at }}</p>
-    <p>Обновлено: {{ post.update_at }}</p>
-    <a href="/list_view">Назад</a>
+    {% if post.image %}
+    <img src='{{post.image.url}}' class="card-img-top" alt="...">
+    {% else %}
+    <img src="/static/place_holder.jpg" class="card-img-top" alt="...">
+    {% endif %}
+        <div class="card" style="width: 30rem;"> 
+            <h5>{{ post.content }}</h5>
+        </div>
+    <h5>Оценка: {{ post.rate }}</h5>
+    <h5>Создано: {{ post.create_at }}</h5>
+    <h5>Обновлено: {{ post.update_at }}</h5>
+    <h5>
+    <a href="/list_view/">Назад</a>
+    </h5>
+    </div>
 </body>
 </html>
 </div>
