@@ -27,8 +27,7 @@ def create_post(request):
     if request.method == "POST":
         form = Post_Form(request.POST, request.FILES)
         if not form.is_valid():
-            error = True
-            return HttpResponse("форма была не верной")
+            return render(request, "posts/post_create.html", context={"form":form})
         elif form.is_valid():
             title = form.cleaned_data["title"]
             content = form.cleaned_data["content"]
