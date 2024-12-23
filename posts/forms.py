@@ -8,6 +8,8 @@ class Post_Form(forms.Form):
     
     def clean(self):
         data = super().clean()
-        if data.get("title") == data.get("content"):
+        title = data.get("title")
+        content = data.get("content")
+        if title.lower() == content.lower():
             raise forms.ValidationError("Title and content must be different")
         return data
