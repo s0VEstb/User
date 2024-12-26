@@ -20,10 +20,10 @@
     </div>
   </div>
 {% endfor %}
-<div style="display": flex; justify-content: center; margin-top: 20px;margin-bottom:>
+<div style="display": flex; justify-content: center; margin-top: 20px; margin-bottom: 20px >
   {% for i in max_pages %}
-{% if request.GET %}
-<class="btn btn primary" href="{{request.get_full_path}}&page={{i}}"></a>
+    {% if request.GET %}
+  <a><class="btn btn primary" href="{{request.get_full_path}}&page={{i}}">{{ i }}</a>
   {% else %}
     <a href="/posts/?page={{i}}" class="btn btn-primary">
         {{i}}
