@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("hello/", hello_view),
     path("tea/", html_view),
-    path("list_view/", list_view),
+    path("posts/", list_view, name="posts"),  # Исправлено
     path("", main_view, name="main-page"),
     path('post_detail/<int:id>/', detail_view),
     path("create_post/", create_post),
@@ -17,4 +17,6 @@ urlpatterns = [
     path("logout/", logout_view, name="logout-view"),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
